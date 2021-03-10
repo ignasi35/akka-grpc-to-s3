@@ -1,0 +1,18 @@
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.example.helloworld";
+option java_outer_classname = "HelloWorldProto";
+
+// The greeting service definition.
+service GreeterService {
+    rpc multiUpload (stream MyRequest) returns (MyResponse) {}
+}
+
+message MyRequest {
+    bytes payload= 2;
+}
+message MyResponse {
+    string message= 1;
+}
